@@ -44,7 +44,7 @@
   CacheMaintenanceLib|MdePkg/Library/BaseCacheMaintenanceLib/BaseCacheMaintenanceLib.inf
   DebugLib|MdePkg/Library/BaseDebugLibNull/BaseDebugLibNull.inf
   DebugPrintErrorLevelLib|MdePkg/Library/BaseDebugPrintErrorLevelLib/BaseDebugPrintErrorLevelLib.inf
-  ExtractGuidedSectionLib|StandaloneMmPkg/Library/StandaloneMmExtractGuidedSectionLib/StandaloneMmExtractGuidedSectionLib.inf
+  ExtractGuidedSectionLib|MdePkg/Library/BaseExtractGuidedSectionLib/BaseExtractGuidedSectionLib.inf # MU_CHANGE: Remove EmbeddedPkg Dependency
   FvLib|StandaloneMmPkg/Library/FvLib/FvLib.inf
   HobLib|StandaloneMmPkg/Library/StandaloneMmHobLib/StandaloneMmHobLib.inf
   IoLib|MdePkg/Library/BaseIoLibIntrinsic/BaseIoLibIntrinsic.inf
@@ -75,21 +75,28 @@
   StandaloneMmCoreEntryPoint|MdePkg/Library/StandaloneMmCoreEntryPoint/StandaloneMmCoreEntryPoint.inf
 
 [LibraryClasses.AARCH64, LibraryClasses.ARM]
-  ArmLib|ArmPkg/Library/ArmLib/ArmBaseLib.inf
-  StandaloneMmCoreEntryPoint|ArmPkg/Library/ArmStandaloneMmCoreEntryPoint/ArmStandaloneMmCoreEntryPoint.inf
-  StandaloneMmMmuLib|ArmPkg/Library/StandaloneMmMmuLib/ArmMmuStandaloneMmLib.inf
-  ArmSmcLib|ArmPkg/Library/ArmSmcLib/ArmSmcLib.inf
-  ArmSvcLib|ArmPkg/Library/ArmSvcLib/ArmSvcLib.inf
-  CacheMaintenanceLib|ArmPkg/Library/ArmCacheMaintenanceLib/ArmCacheMaintenanceLib.inf
+  # MU_CHANGE [BEGIN]: Remove ArmPkg Dependencies
+  #ArmLib|ArmPkg/Library/ArmLib/ArmBaseLib.inf
+  #StandaloneMmCoreEntryPoint|ArmPkg/Library/ArmStandaloneMmCoreEntryPoint/ArmStandaloneMmCoreEntryPoint.inf
+  #StandaloneMmMmuLib|ArmPkg/Library/StandaloneMmMmuLib/ArmMmuStandaloneMmLib.inf
+  #ArmSmcLib|ArmPkg/Library/ArmSmcLib/ArmSmcLib.inf
+  #ArmSvcLib|ArmPkg/Library/ArmSvcLib/ArmSvcLib.inf
+  #CacheMaintenanceLib|ArmPkg/Library/ArmCacheMaintenanceLib/ArmCacheMaintenanceLib.inf
+  # MU_CHANGE [END]: Remove ArmPkg Dependencies
   PeCoffExtraActionLib|StandaloneMmPkg/Library/StandaloneMmPeCoffExtraActionLib/StandaloneMmPeCoffExtraActionLib.inf
-  ArmTransferListLib|ArmPkg/Library/ArmTransferListLib/ArmTransferListLib.inf
+  # MU_CHANGE [BEGIN]: Remove ArmPkg Dependencies
+  #ArmTransferListLib|ArmPkg/Library/ArmTransferListLib/ArmTransferListLib.inf
+  # MU_CHANGE [END]: Remove ArmPkg Dependencies
+
 
 [LibraryClasses.common.MM_CORE_STANDALONE]
   HobLib|StandaloneMmPkg/Library/StandaloneMmCoreHobLib/StandaloneMmCoreHobLib.inf
-  ArmFfaLib|ArmPkg/Library/ArmFfaLib/ArmFfaStandaloneMmCoreLib.inf
+  # MU_CHANGE [BEGIN]: Remove ArmPkg Dependencies
+  #ArmFfaLib|ArmPkg/Library/ArmFfaLib/ArmFfaStandaloneMmCoreLib.inf
 
-[LibraryClasses.AARCH64.MM_CORE_STANDALONE, LibraryClasses.ARM.MM_CORE_STANDALONE]
-  ArmFfaLib|ArmPkg/Library/ArmFfaLib/ArmFfaStandaloneMmCoreLib.inf
+#[LibraryClasses.AARCH64.MM_CORE_STANDALONE, LibraryClasses.ARM.MM_CORE_STANDALONE]
+  #ArmFfaLib|ArmPkg/Library/ArmFfaLib/ArmFfaStandaloneMmCoreLib.inf
+  # MU_CHANGE [END]: Remove ArmPkg Dependencies
 
 [LibraryClasses.common.MM_STANDALONE]
   MemoryAllocationLib|StandaloneMmPkg/Library/StandaloneMmMemoryAllocationLib/StandaloneMmMemoryAllocationLib.inf
